@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<missionVehicles>
+<!--=====================================================================================================
+    BetterContracts user-defined mission vehicles
+    Purpose:     Define vehicles to be used for contracts
+    Author:      (Giants, adapted by Aekzl; RoyalModding, Mmtrx)   
+    Usage:       You can define additional vehicle sets to use for specific contracts (aka missions).
+                 You can define mod vehicles/ tools, see requiredMod="FS22_vaderstadSpiritR300S" below.
+                 Your user-defined vehicles are added to the mission vehicles from base game (and possibly
+                 from the map definition), to choose from when a new mission is created.
+                 To make the mod read in your vehicle definitions, rename this file to userDefined.xml.
+                 You can delete any base game or map-defined mission vehicles (and thus use only those
+                 that you defined) by setting overwrite="true" in the <missionVehicles> tag. If you want to try 
+                 this, use extreme
 
-    <mission type="harvest">
+                 CAUTION: You must be sure that you specify a vehicle group for every mission type / fieldsize / 
+                          variant combination possible. For mods, specify the correct modname and filename. 
+                          BetterContracts will try to check this, and issue warnings in the log 
+    Changelog:
+     v0.1        17.03.2021  initial by Royal-Modding
+     v1.1.0.4    07.07.2021  (Mmtrx) add user-defined missionVehicles.xml, allow missions with no vehicles
+     v1.2.0.0    18.01.2022  (Mmtrx) adapt for FS22
+	 v1.3.0.0	 03.09.2022	 (Aekzl) prepare for using FarmingDud's real physics modified Vehicles (aka. geKRAMERt :D )
+=======================================================================================================-->
+
+<missionVehicles overwrite="false">
+	<mission type="harvest">
         <!-- grainMission -->
         <group fieldSize="small" variant="GRAIN">
             <vehicle filename="$data/vehicles/rostselmash/nova330/nova330.xml" /> <!-- combine -->
@@ -32,7 +54,8 @@
             <vehicle filename="$data/vehicles/johnDeere/t560/t560.xml" /> <!-- combine -->
             <vehicle filename="$data/vehicles/johnDeere/header625X/header625X.xml"/> <!-- header -->
             <vehicle filename="$data/vehicles/nardi/n40bx/n40bx.xml" /> <!-- headerTrailer -->
-            <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor --> -->
+            <vehicle filename="series7810.xml" requiredMod="K_FS22_JD7810_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/claas/carat/carat.xml" > <!-- trailer -->
                 <configuration name="fillVolume" id="2" />
                 <configuration name="fillUnit" id="2" />
@@ -141,7 +164,8 @@
                 <configuration name="motor" id="4" />
                 <configuration name="wheel" id="5" />
             </vehicle>
-            <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor --> -->
+            <vehicle filename="series4755.xml" requiredMod="K_FS22_JD4755_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/rudolphSohn/tdk301RA/tdk301RA.xml" /> <!-- trailer -->
             <vehicle filename="$data/vehicles/rudolphSohn/dk280RL/dk280RL.xml" /> <!-- trailer -->
         </group>
@@ -200,7 +224,8 @@
         <group fieldSize="medium" variant="MAIZE">
             <vehicle filename="$data/vehicles/newHolland/chSeries/chSeries.xml" /> <!-- combine -->
             <vehicle filename="$data/vehicles/capello/diamant8/diamant8.xml" /> <!-- header -->
-            <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor --> -->
+            <vehicle filename="series7810.xml" requiredMod="K_FS22_JD7810_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/brantner/ta23065/ta23065.xml" /> <!-- trailer -->
         </group>
         <group fieldSize="medium" variant="MAIZE">
@@ -239,7 +264,9 @@
             <vehicle filename="$data/vehicles/johnDeere/t560/t560.xml" /> <!-- combine -->
             <vehicle filename="$data/vehicles/johnDeere/header608C/header608C.xml"/> <!-- header -->
             <vehicle filename="$data/vehicles/nardi/n20T/n20T.xml" /> <!-- headerTrailer -->
-            <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" />  -->
+            <vehicle filename="series6R.xml" requiredMod="K_FS22_JD6R_MR"/> <!-- tractor -->
+
             <vehicle filename="$data/vehicles/fliegl/tmk273/tmk273.xml" /> <!-- trailer -->
         </group>
         <group fieldSize="medium" variant="MAIZE">
@@ -316,7 +343,8 @@
                 <configuration name="motor" id="2" />
                 <configuration name="wheel" id="9" />
             </vehicle>
-            <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor --> -->
+            <vehicle filename="series4755.xml" requiredMod="K_FS22_JD4755_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/rudolphSohn/tdk301RA/tdk301RA.xml" /> <!-- trailer -->
             <vehicle filename="$data/vehicles/rudolphSohn/dk280RL/dk280RL.xml" /> <!-- trailer -->
         </group>
@@ -390,7 +418,8 @@
 
         <group fieldSize="large" variant="SUGARCANE">
             <vehicle filename="$data/vehicles/caseIH/a8800MR/a8800MR.xml" /> <!-- combine -->
-            <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" /> -->
+            <vehicle filename="series6R.xml" requiredMod="K_FS22_JD6R_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/masseyFerguson/mf3012/mf3012.xml" /> <!-- trailer -->
             <vehicle filename="$data/vehicles/masseyFerguson/mf3012/mf3012.xml" /> <!-- trailer -->
         </group>
@@ -513,7 +542,8 @@
 
     <!-- maizeMission -->
         <group fieldSize="small" variant="MAIZE">
-            <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor --> -->
+            <vehicle filename="series8150.xml" requiredMod="K_FS22_Steyr_8150_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/agromasz/falcon/falcon.xml" /> <!-- seeder -->
             <vehicle filename="$data/vehicles/tenwinkel/weight600/weight600.xml" /> <!-- weight -->
         </group>
@@ -551,7 +581,8 @@
             <vehicle filename="$data/vehicles/lemken/solitair23/solitair23.xml"/> <!-- tank -->
         </group>
         <group fieldSize="medium" variant="MAIZE">
-            <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor --> -->
+            <vehicle filename="series8750.xml" requiredMod="K_FS22_Valtra_Series8750_MR"/> <!-- tractor -->
                 <configuration name="wheel" id="2" />
             </vehicle>
             <vehicle filename="$data/vehicles/kverneland/optimaRS9m/optimaRS9m.xml" /> <!-- seeder -->
@@ -583,7 +614,8 @@
 
     <!-- sugarBeetMission -->
         <group fieldSize="small" variant="SUGARBEET">
-            <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor --> -->
+            <vehicle filename="series8150.xml" requiredMod="K_FS22_Steyr_8150_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/agromasz/falcon/falcon.xml" /> <!-- seeder -->
             <vehicle filename="$data/vehicles/tenwinkel/weight600/weight600.xml" /> <!-- weight -->
         </group>
@@ -621,8 +653,10 @@
             <vehicle filename="$data/vehicles/lemken/solitair23/solitair23.xml"/> <!-- tank -->
         </group>
         <group fieldSize="medium" variant="SUGARBEET">
-            <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor -->
-                <configuration name="wheel" id="2" />
+            <!-- <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor --> -->
+            <vehicle filename="series8750.xml" requiredMod="K_FS22_Valtra_Series8750_MR"> <!-- tractor -->
+<!-- IMPORTANT - CHECK ALL ENTRIES - is id 2 correct? we have different tire configs ! -->
+                <configuration name="wheel" id="2" /> 
             </vehicle>
             <vehicle filename="$data/vehicles/kverneland/optimaRS9m/optimaRS9m.xml" /> <!-- seeder -->
             <vehicle filename="$data/vehicles/tenwinkel/weight1500/weight1500.xml"/> <!-- tank -->
@@ -649,7 +683,8 @@
 
     <!-- sugarCaneMission -->
         <group fieldSize="small" variant="SUGARCANE">
-            <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series4755/series4755.xml" /> <!-- tractor --> -->
+            <vehicle filename="series4755.xml" requiredMod="K_FS22_JD4755_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/gessner/singleRow/singleRow.xml" /> <!-- seeder -->
             <vehicle filename="$data/vehicles/johnDeere/pickUp900/pickUp900.xml" /> <!-- weight -->
         </group>
@@ -691,7 +726,8 @@
 
     <!-- cottonMission -->
         <group fieldSize="small" variant="COTTON">
-            <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/steyr/series8150/series8150.xml" /> <!-- tractor --> -->
+            <vehicle filename="series8150.xml" requiredMod="K_FS22_Steyr_8150_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/agromasz/falcon/falcon.xml" /> <!-- seeder -->
             <vehicle filename="$data/vehicles/tenwinkel/weight600/weight600.xml" /> <!-- weight -->
         </group>
@@ -729,7 +765,8 @@
             <vehicle filename="$data/vehicles/lemken/solitair23/solitair23.xml"/> <!-- tank -->
         </group>
         <group fieldSize="medium" variant="COTTON">
-            <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" > <!-- tractor --> -->
+            <vehicle filename="series8750.xml" requiredMod="K_FS22_Valtra_Series8750_MR"> <!-- tractor -->
                 <configuration name="wheel" id="2" />
             </vehicle>
             <vehicle filename="$data/vehicles/kverneland/optimaRS9m/optimaRS9m.xml" /> <!-- seeder -->
@@ -867,7 +904,8 @@
 
     <mission type="cultivate">
         <group fieldSize="small">
-            <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series7810/series7810.xml" /> <!-- tractor -->  -->
+            <vehicle filename="series7810.xml" requiredMod="K_FS22_JD7810_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/horsch/terrano3FX/terrano3FX.xml" /> <!-- cultivator -->
             <vehicle filename="$data/vehicles/johnDeere/pickUp900/pickUp900.xml" /> <!-- weight -->
         </group>
@@ -877,13 +915,15 @@
             <vehicle filename="$data/vehicles/tenwinkel/weight1000/weight1000.xml" /> <!-- weight -->
         </group>
         <group fieldSize="small">
-            <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/valtra/series8750/series8750.xml" /> <!-- tractor --> -->
+            <vehicle filename="series8750.xml" requiredMod="K_FS22_Valtra_Series8750_MR"> <!-- tractor -->
             <vehicle filename="$data/vehicles/amazone/cenio4000/cenio4000.xml" /> <!-- cultivator -->
             <vehicle filename="$data/vehicles/tenwinkel/weight1000/weight1000.xml" /> <!-- weight -->
         </group>
 
         <group fieldSize="medium">
-            <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" /> <!-- tractor -->
+            <!-- <vehicle filename="$data/vehicles/johnDeere/series6R/series6R.xml" />  -->
+            <vehicle filename="series6R.xml" requiredMod="K_FS22_JD6R_MR"/> <!-- tractor -->
             <vehicle filename="$data/vehicles/koeckerling/allrounderFlatline600/allrounderFlatline600.xml" /> <!-- cultivator -->
         </group>
         <group fieldSize="medium">
@@ -1064,4 +1104,6 @@
             <vehicle filename="$data/vehicles/andersonGroup/rbm2000/rbm2000.xml" /> <!-- flatbed -->
         </group>
     </mission>
+
+
 </missionVehicles>
